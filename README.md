@@ -1,6 +1,6 @@
 # Changes to offical repo
 
-The term app commonly refers to a docker app. For lack of better alternatives the term "App/Data-Store" is instead used, since the C4 Model defines them as follows:
+The term container commonly refers to a docker app. For lack of better alternatives the term "App/Data-Store" is instead used, since the C4 Model defines them as follows:
 >"Not Docker! In the C4 model a app represents an application or a data store."
 
 To create a new "App/Data-Store" element, use `App` instead of `Container`.
