@@ -3,23 +3,23 @@
 		"scope": "plantuml",
 		"prefix": "Include C4 Context Diagram",
 		"body": [
-			"!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml"
+			"!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Context.puml"
 		],
 		"description": "Include C4 Context Diagram"
 	},
-	"C4_Include_Container": {
+	"C4_Include_App": {
 		"scope": "plantuml",
-		"prefix": "Include C4 Container Diagram",
+		"prefix": "Include C4 App Diagram",
 		"body": [
-			"!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml"
+			"!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml"
 		],
-		"description": "Include C4 Container Diagram"
+		"description": "Include C4 App Diagram"
 	},
 	"C4_Include_Component": {
 		"scope": "plantuml",
 		"prefix": "Include C4 Component Diagram",
 		"body": [
-			"!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml"
+			"!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Component.puml"
 		],
 		"description": "Include C4 Component Diagram"
 	},
@@ -27,7 +27,7 @@
 		"scope": "plantuml",
 		"prefix": "Include C4 Deployment Diagram",
 		"body": [
-			"!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml"
+			"!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Deployment.puml"
 		],
 		"description": "Include C4 Deployment Diagram"
 	},
@@ -35,7 +35,7 @@
 		"scope": "plantuml",
 		"prefix": "Include C4 Dynamic Diagram",
 		"body": [
-			"!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml"
+			"!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Dynamic.puml"
 		],
 		"description": "Include C4 Dynamic Diagram"
 	},
@@ -77,132 +77,132 @@
 		],
 		"description": "Add External Person with Description to C4 diagram"
 	},
-	"C4_Container": {
+	"C4_App": {
 		"scope": "plantuml",
-		"prefix": "Container",
+		"prefix": "App",
 		"body": [
-			"Container(${1:alias}, \"${2:label}\", \"${3:technology}\")"
+			"App(${1:alias}, \"${2:label}\", \"${3:technology}\")"
 		],
-		"description": "Add Container to C4 diagram"
+		"description": "Add App to C4 diagram"
 	},
-	"C4_Container_Descr": {
+	"C4_App_Descr": {
 		"scope": "plantuml",
-		"prefix": "Container with Description",
+		"prefix": "App with Description",
 		"body": [
-			"Container(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
+			"App(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
 		],
-		"description": "Add Container with Description to C4 diagram"
+		"description": "Add App with Description to C4 diagram"
 	},
-	"C4_Container_Ext": {
+	"C4_App_Ext": {
 		"scope": "plantuml",
 		"prefix": [
-			"External Container",
-			"Container (External)"
+			"External App",
+			"App (External)"
 		],
 		"body": [
-			"Container_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\")"
+			"App_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\")"
 		],
-		"description": "Add External Container to C4 diagram"
+		"description": "Add External App to C4 diagram"
 	},
-	"C4_Container_Ext_Descr": {
+	"C4_App_Ext_Descr": {
 		"scope": "plantuml",
 		"prefix": [
-			"External Container with Description",
-			"Container (External) with Description"
+			"External App with Description",
+			"App (External) with Description"
 		],
 		"body": [
-			"Container_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
+			"App_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
 		],
-		"description": "Add External Container with Description to C4 diagram"
+		"description": "Add External App with Description to C4 diagram"
 	},
-	"C4_ContainerDb": {
+	"C4_AppDb": {
 		"scope": "plantuml",
-		"prefix": "Database Container",
+		"prefix": "Database App",
 		"body": [
-			"ContainerDb(${1:alias}, \"${2:label}\", \"${3:technology}\")"
+			"AppDb(${1:alias}, \"${2:label}\", \"${3:technology}\")"
 		],
-		"description": "Add Database Container to C4 diagram"
+		"description": "Add Database App to C4 diagram"
 	},
-	"C4_ContainerDb_Descr": {
+	"C4_AppDb_Descr": {
 		"scope": "plantuml",
-		"prefix": "Database Container with Description",
+		"prefix": "Database App with Description",
 		"body": [
-			"ContainerDb(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
+			"AppDb(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
 		],
-		"description": "Add Database Container with Description to C4 diagram"
+		"description": "Add Database App with Description to C4 diagram"
 	},
-	"C4_ContainerDb_Ext": {
-		"scope": "plantuml",
-		"prefix": [
-			"External Database Container",
-			"Database Container (External)"
-		],
-		"body": [
-			"ContainerDb_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\")"
-		],
-		"description": "Add External Database Container to C4 diagram"
-	},
-	"C4_ContainerDb_Ext_Descr": {
+	"C4_AppDb_Ext": {
 		"scope": "plantuml",
 		"prefix": [
-			"External Database Container with Description",
-			"Database Container (External) with Description"
+			"External Database App",
+			"Database App (External)"
 		],
 		"body": [
-			"ContainerDb_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
+			"AppDb_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\")"
 		],
-		"description": "Add External Database Container with Description to C4 diagram"
+		"description": "Add External Database App to C4 diagram"
 	},
-	"C4_ContainerQueue": {
-		"scope": "plantuml",
-		"prefix": "Queue Container",
-		"body": [
-			"ContainerQueue(${1:alias}, \"${2:label}\", \"${3:technology}\")"
-		],
-		"description": "Add Queue Container to C4 diagram"
-	},
-	"C4_ContainerQueue_Descr": {
-		"scope": "plantuml",
-		"prefix": "Queue Container with Description",
-		"body": [
-			"ContainerQueue(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
-		],
-		"description": "Add Queue Container with Description to C4 diagram"
-	},
-	"C4_ContainerQueue_Ext": {
+	"C4_AppDb_Ext_Descr": {
 		"scope": "plantuml",
 		"prefix": [
-			"External Queue Container",
-			"Queue Container (External)"
+			"External Database App with Description",
+			"Database App (External) with Description"
 		],
 		"body": [
-			"ContainerQueue_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\")"
+			"AppDb_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
 		],
-		"description": "Add External Queue Container to C4 diagram"
+		"description": "Add External Database App with Description to C4 diagram"
 	},
-	"C4_ContainerQueue_Ext_Descr": {
+	"C4_AppQueue": {
+		"scope": "plantuml",
+		"prefix": "Queue App",
+		"body": [
+			"AppQueue(${1:alias}, \"${2:label}\", \"${3:technology}\")"
+		],
+		"description": "Add Queue App to C4 diagram"
+	},
+	"C4_AppQueue_Descr": {
+		"scope": "plantuml",
+		"prefix": "Queue App with Description",
+		"body": [
+			"AppQueue(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
+		],
+		"description": "Add Queue App with Description to C4 diagram"
+	},
+	"C4_AppQueue_Ext": {
 		"scope": "plantuml",
 		"prefix": [
-			"External Queue Container with Description",
-			"Queue Container (External) with Description"
+			"External Queue App",
+			"Queue App (External)"
 		],
 		"body": [
-			"ContainerQueue_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
+			"AppQueue_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\")"
 		],
-		"description": "Add ExternalQueue Container with Description to C4 diagram"
+		"description": "Add External Queue App to C4 diagram"
 	},
-	"C4_Container_Boundary": {
+	"C4_AppQueue_Ext_Descr": {
 		"scope": "plantuml",
 		"prefix": [
-			"Container Boundary",
-			"Boundary for Container"
+			"External Queue App with Description",
+			"Queue App (External) with Description"
 		],
 		"body": [
-			"Container_Boundary(${1:alias}, \"${2:label}\"){",
+			"AppQueue_Ext(${1:alias}, \"${2:label}\", \"${3:technology}\", \"${4:description}\")"
+		],
+		"description": "Add ExternalQueue App with Description to C4 diagram"
+	},
+	"C4_App_Boundary": {
+		"scope": "plantuml",
+		"prefix": [
+			"App Boundary",
+			"Boundary for App"
+		],
+		"body": [
+			"App_Boundary(${1:alias}, \"${2:label}\"){",
 			"\t$0",
 			"}"
 		],
-		"description": "Add a Container Boundary to C4 diagram"
+		"description": "Add a App Boundary to C4 diagram"
 	},
 	"C4_Component": {
 		"scope": "plantuml",

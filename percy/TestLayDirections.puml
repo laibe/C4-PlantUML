@@ -1,9 +1,9 @@
 @startuml
 ' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
 !if %variable_exists("RELATIVE_INCLUDE")
-  !include ./../C4_Container.puml
+  !include ./../C4_App.puml
 !else
-  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  !include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 !endif
 
 HIDE_STEREOTYPE()

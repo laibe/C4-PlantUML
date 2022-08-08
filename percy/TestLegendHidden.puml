@@ -3,7 +3,7 @@
 !if %variable_exists("RELATIVE_INCLUDE")
   !include ./../C4_Component.puml
 !else
-  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+  !include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Component.puml
 !endif
 
 AddElementTag("shapeRound", $shape=$ROUNDED_BOX)
@@ -12,10 +12,10 @@ AddElementTag("shadowed", $shadowing=true)
 AddElementTag("shadowed2", $shadowing=false)
 AddElementTag("yelloTagged", $fontColor=yellow, $borderColor=yellow)
 AddElementTag("greenTagged", $borderColor=green, $bgColor=green)
-AddElementTag("taggedContainer", $fontColor=white, $bgColor=$CONTAINER_BG_COLOR, $borderColor=$CONTAINER_BORDER_COLOR)
+AddElementTag("taggedApp", $fontColor=white, $bgColor=$APP_BG_COLOR, $borderColor=$APP_BORDER_COLOR)
 AddElementTag("taggedPerson", $fontColor=white, $bgColor=$PERSON_BG_COLOR, $borderColor=$PERSON_BORDER_COLOR)
 
-Container(c2, Container 2, tech, $tags="taggedContainer", "'taggedContainer' stereotype/tag overwrites all styles of container ($fontColor, $bgColor and $borderColor) the container is not important anymore and therefore not displayed in legend")
+App(c2, App 2, tech, $tags="taggedApp", "'taggedApp' stereotype/tag overwrites all styles of app ($fontColor, $bgColor and $borderColor) the app is not important anymore and therefore not displayed in legend")
 Person(p2, p2, $tags="taggedPerson", "produces no person legend entry too")
 
 Person(p4, p4, $tags="yelloTagged", "'yelloTagged' stereotype/tag first and defines $fontColor and $borderColor (in legend), 'person' defines additional $bgColor (in legend too)")

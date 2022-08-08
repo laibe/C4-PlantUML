@@ -3,7 +3,7 @@
 !if %variable_exists("RELATIVE_INCLUDE")
   !include ./../C4_Component.puml
 !else
-  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+  !include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Component.puml
 !endif
 
 !define osaPuml https://raw.githubusercontent.com/Crashedmind/PlantUML-opensecurityarchitecture2-icons/master
@@ -25,13 +25,13 @@ AddExternalPersonTag("anonymous_ext", $sprite="osa_user_black_hat", $legendText=
 AddPersonTag("customer", $sprite="osa_user_large_group", $legendText="aggregated user")
 AddPersonTag("admin", $sprite="osa_user_audit,color=red", $legendSprite="osa_user_audit,scale=0.25,color=red", $legendText="administration user")
 
-AddContainerTag("webApp", $sprite="application_server", $legendText="web application")
+AddAppTag("webApp", $sprite="application_server", $legendText="web application")
 
-AddContainerTag("mongo_db", $sprite="mongodb", $legendText="MongoDB container")
-AddContainerTag("mysql_db", $sprite="mysql", $legendText="MySQL container")
-AddContainerTag("files", $sprite="file_server", $legendText="file server container")
+AddAppTag("mongo_db", $sprite="mongodb", $legendText="MongoDB app")
+AddAppTag("mysql_db", $sprite="mysql", $legendText="MySQL app")
+AddAppTag("files", $sprite="file_server", $legendText="file server app")
 
-AddContainerTag("conApp", $sprite="img:http://plantuml.com/logo3.png{scale=0.3}", $legendSprite="img:http://plantuml.com/logo3.png{scale=0.1}", $legendText="console application")
+AddAppTag("conApp", $sprite="img:http://plantuml.com/logo3.png{scale=0.3}", $legendSprite="img:http://plantuml.com/logo3.png{scale=0.1}", $legendText="console application")
 
 UpdateElementStyle("external_system", $bgColor=$EXTERNAL_SYSTEM_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$EXTERNAL_SYSTEM_BORDER_COLOR, $sprite = "osa_server", , $legendText="external system")
 
@@ -46,11 +46,11 @@ Person(aggregated_user, "Sam, Ivone", $tags="customer")
 Person(administration_user, "Bernd", $tags="admin")
 
 System_Boundary(c1, "techtribes.js"){
-    Container(web_app, "Web Application", "Java, Spring MVC, Tomcat 7.x", "Allows users to view people, tribes, content, events, jobs, etc. from the local tech, digital and IT sector", $tags="webApp")
-    ContainerDb(rel_db, "Relational Database", "MySQL 5.5.x", "Stores people, tribes, tribe membership, talks, events, jobs, badges, GitHub repos, etc.", $tags="mysql_db")
-    Container(filesystem, "File System", "FAT32", "Stores search indexes", $tags="files")
-    ContainerDb(nosql, "NoSQL Data Store", "MongoDB 2.2.x", "Stores from RSS/Atom feeds (blog posts) and tweets", $tags="mongo_db")
-    Container(updater, "Updater", "Java 7 Console App", "Updates profiles, tweets, GitHub repos and content on a scheduled basis", $tags="conApp")
+    App(web_app, "Web Application", "Java, Spring MVC, Tomcat 7.x", "Allows users to view people, tribes, content, events, jobs, etc. from the local tech, digital and IT sector", $tags="webApp")
+    AppDb(rel_db, "Relational Database", "MySQL 5.5.x", "Stores people, tribes, tribe membership, talks, events, jobs, badges, GitHub repos, etc.", $tags="mysql_db")
+    App(filesystem, "File System", "FAT32", "Stores search indexes", $tags="files")
+    AppDb(nosql, "NoSQL Data Store", "MongoDB 2.2.x", "Stores from RSS/Atom feeds (blog posts) and tweets", $tags="mongo_db")
+    App(updater, "Updater", "Java 7 Console App", "Updates profiles, tweets, GitHub repos and content on a scheduled basis", $tags="conApp")
 }
 
 System_Ext(twitter, "Twitter")

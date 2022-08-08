@@ -1,13 +1,13 @@
 ' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
 !if %variable_exists("RELATIVE_INCLUDE")
-  !include %get_variable_value("RELATIVE_INCLUDE")/C4_Container.puml
+  !include %get_variable_value("RELATIVE_INCLUDE")/C4_App.puml
 !else
-  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  !include ./C4_App.puml
 !endif
 
-' Scope: A single container.
-' Primary elements: Components within the container in scope.
-' Supporting elements: Containers (within the software system in scope) plus people and software systems directly connected to the components.
+' Scope: A single app.
+' Primary elements: Components within the app in scope.
+' Supporting elements: Apps (within the software system in scope) plus people and software systems directly connected to the components.
 ' Intended audience: Software architects and developers.
 
 ' Colors
@@ -37,7 +37,7 @@ UpdateElementStyle("external_component", $EXTERNAL_COMPONENT_BG_COLOR, $COMPONEN
 ' Layout
 ' ##################################
 
-SetDefaultLegendEntries("person\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component")
+SetDefaultLegendEntries("person\nsystem\napp\ncomponent\nexternal_person\nexternal_system\nexternal_app\nexternal_component")
 
 !procedure LAYOUT_WITH_LEGEND()
 hide stereotype
@@ -45,11 +45,11 @@ legend right
 |<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
 |<$PERSON_BG_COLOR> person |
 |<$SYSTEM_BG_COLOR> system |
-|<$CONTAINER_BG_COLOR> container |
+|<$APP_BG_COLOR> app/data-store |
 |<$COMPONENT_BG_COLOR> component |
 |<$EXTERNAL_PERSON_BG_COLOR> external person |
 |<$EXTERNAL_SYSTEM_BG_COLOR> external system |
-|<$EXTERNAL_CONTAINER_BG_COLOR> external container |
+|<$EXTERNAL_APP_BG_COLOR> external app/data-store |
 |<$EXTERNAL_COMPONENT_BG_COLOR> external component |
 endlegend
 !endprocedure

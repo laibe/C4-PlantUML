@@ -1,0 +1,111 @@
+' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
+!if %variable_exists("RELATIVE_INCLUDE")
+  !include %get_variable_value("RELATIVE_INCLUDE")/C4_Context.puml
+!else
+  !include ./C4_Context.puml
+!endif
+
+' Scope: A single software system.
+' Primary elements: Apps within the software system in scope.
+' Supporting elements: People and software systems directly connected to the apps.
+' Intended audience: Technical people inside and outside of the software development team; including software architects, developers and operations/support staff.
+
+' Colors
+' ##################################
+
+!global $APP_BG_COLOR = "#438DD5"
+!global $APP_BORDER_COLOR = "#3C7FC0"
+!global $EXTERNAL_APP_BG_COLOR = "#B3B3B3"
+!global $EXTERNAL_APP_BORDER_COLOR = "#A6A6A6"
+
+' Styling
+' ##################################
+UpdateElementStyle("app/data-store", $APP_BG_COLOR, $ELEMENT_FONT_COLOR, $APP_BORDER_COLOR)
+UpdateElementStyle("external_app", $EXTERNAL_APP_BG_COLOR, $ELEMENT_FONT_COLOR, $EXTERNAL_APP_BORDER_COLOR)
+
+' shortcuts with default colors
+!unquoted procedure AddAppTag($tagStereo, $bgColor=$APP_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$APP_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $techn="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, $techn, $legendText, $legendSprite)
+!endprocedure
+!unquoted procedure AddExternalAppTag($tagStereo, $bgColor=$EXTERNAL_APP_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$EXTERNAL_APP_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $techn="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, $techn, $legendText, $legendSprite)
+!endprocedure
+
+' Layout
+' ##################################
+
+SetDefaultLegendEntries("person\nsystem\napp\nexternal_person\nexternal_system\nexternal_app")
+
+!procedure LAYOUT_WITH_LEGEND()
+hide stereotype
+legend right
+|<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
+|<$PERSON_BG_COLOR> person |
+|<$SYSTEM_BG_COLOR> system |
+|<$APP_BG_COLOR> app/data-store |
+|<$EXTERNAL_PERSON_BG_COLOR> external person |
+|<$EXTERNAL_SYSTEM_BG_COLOR> external system |
+|<$EXTERNAL_APP_BG_COLOR> external app/data-store |
+endlegend
+!endprocedure
+
+' Elements
+' ##################################
+
+!function $getApp($label, $techn, $descr, $sprite)
+  !$app = ""
+  !if ($sprite != "")
+    !$app = $app + $getSprite($sprite) + '\n'
+  !endif
+  !$app = $app + '==' + $label
+  !if ($techn != "")
+    !$app = $app + '\n//<size:' + $TECHN_FONT_SIZE + '>[' + $techn + ']</size>//'
+  !endif
+  !if ($descr != "")
+    !$app = $app + '\n\n' + $descr
+  !endif
+  !return $app
+!endfunction
+
+!unquoted procedure App($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "app/data-store")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "app/data-store")
+rectangle "$getApp($label, $techn, $descr, $sprite)$getProps()" $toStereos("app/data-store", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure AppDb($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "app/data-store")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "app/data-store")
+database "$getApp($label, $techn, $descr, $sprite)$getProps()" $toStereos("app/data-store", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure AppQueue($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "app/data-store")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "app/data-store")
+queue "$getApp($label, $techn, $descr, $sprite)$getProps()" $toStereos("app/data-store", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure App_Ext($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_app")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "external_app")
+rectangle "$getApp($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_app", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure AppDb_Ext($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_app")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "external_app")
+database "$getApp($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_app", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure AppQueue_Ext($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_app")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "external_app")
+queue "$getApp($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_app", $tags) as $alias $getLink($link)
+!endprocedure
+
+' Boundaries
+' ##################################
+
+!unquoted procedure App_Boundary($alias, $label, $tags="", $link="")
+Boundary($alias, $label, "App/Data-Store", $tags, $link)
+!endprocedure

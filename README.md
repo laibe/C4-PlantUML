@@ -1,6 +1,16 @@
+# Changes to offical repo
+
+The term app commonly refers to a docker app. For lack of better alternatives the term "App/Data-Store" is instead used, since the C4 Model defines them as follows:
+>"Not Docker! In the C4 model a app represents an application or a data store."
+
+To create a new "App/Data-Store" element, use `App` instead of `Container`.
+
+Note: Some of the examples within the README still contain the container naming.
+
+
 # C4-PlantUML
 
-![Container diagram for Internet Banking System](https://www.plantuml.com/plantuml/png/hLPlZzh64txFfvYGH0690_sKNzvKEYaSkCr5S4Snb_GT6di7UvNrhhkxvWvL_UwTDJO-k5IfrBu1x-pEypmxVyR-w3nQNnMgzmvIe_TaFKWFZzBdW498Bur6nLj5WLg0afe0RLOLf3rSpTVHOhgv_H9jR-zcYuTvTDqVzy4Rg1o1CYagTUYzaZjukqShCL6qfIVfl1lqBptxmnx0AwbJLGc2yMGydip-lvqPxP4vxRWC6b-HSlJyNEvzwNwQJ2m-ZZFMN2NCR5FsOdrZLZqf5UfmloldXP89WrwjWkbXkPWKw3pPx_9e8NUzNlpf_kjs5QtZ-xlj_SDcSNiN3OOSgGrc3bnLbiPwq0PSYIava1fyJg2n81Waw4Y0EPegBSXoyAJE872IyOUIt0WUSvdc88n-vrl05WtreJ2MXcDWnjlToMm9BFrU4UE8bb9Hnf97pJzuUcfoM3j1ZYva9I4Gj9EQH6ygHAGeP97lCkWdc7vZnrCO-YDui-F5p2XZhzz4YsWPtMssFz_pp-n-SR_c_IGxxlPVlt__OJxz47nSZYLTHpBBVIm5YJYi1qFUEIhRiB3hbWtIbWu655p01PzXVnZahKdLqj0TT1gm-LAjdkbwpObfXOIY_DkDs1yKNS_HvIGMKhEOC_G0FlblA8pt7KNFIwy8JW458J6pMC3EMBZLdgmc3pUeluMIY0_EKz7hhSWwemTfvRmfo8vWTdhgJw4rWzdLIK_OUtHCSraxegfjW6bgAkrTdtKSeRStR11e3uFqVunrAQ0_X3zw0D3f7JnIiiMovCDVAO5fMIgPOfW6VJPznZsE82vj4B_yCWksEIcvPncrDEVvR0fD8m9gKPjFl4bxyTMKHPupkn8PBkPjHLShp2YmjwnnQcNfHp3LMQNG1lFAchqKeJEK-ZxBhjBfSP19Vm1lE99r81ti9GONQO7l2uarZuxi2qM5IQIY9XpBi3XfchqUmMzO84VYN0ieMSZGeQvA77dEsJ_Mvbw8Eme0GNkPqgMyUJ8Gw37Ccv26vZ6eYNzTmDdQ6qiEmeW4IvbqtjOf1QcvB8lwUGHvtIk0bSyXjIH8UudAZK9PaNEWJCOBykduHQ2QnkP8oL2ngzll5yxSy37R-Pr5xWSH2a5XuBfRCNFNBqONY_hpLFRHanzGWL9jNMrWekXgoUkcvGBp9YUGDIagMChK6cTs7gAdD4UT4Hmz6VOPPgEjGsLClRDOq4LFTs4FvTbMGSg6zdxFWm-OcCft9J0wjV88l4Nji8v45_xUcjIpST4rxOCZ5xW_RJQhc0-UdtCb_l1CK_GTN4EtlGkpEZ7TYAZXkW7G8DN6yu9e2UjvEuBF_5gTrEHTDkkj1g5JyE-0jZVitCdkckKST4qe7EoiAUfvzMYb9mVU1AA6PtupOyWJvhDeNHHPpB0Ew2fOQunEo7azdccuzAiSrqT77oytAmOwoy6P-qLLTd7gtd8yhPQBorXrsmn__EXPHBz4T_F1iBSpnfC5OV5H7zyrxUSJxCVmDYHS6ZqOrZ7hFgx2BY-_jDkzZwooAjHV "Container diagram for Internet Banking System")
+![App diagram for Internet Banking System](images/C4_Container%20Diagram%20Sample%20-%20bigbankplc-styles.png)
 
 C4-PlantUML combines the benefits of [PlantUML](https://plantuml.com/) and the [C4 model](https://c4model.com/) for providing a simple way of describing and communicate software architectures – especially during up-front design sessions – with an intuitive language using open source and platform independent tools.
 
@@ -24,7 +34,7 @@ C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippet
 
 ## Getting Started
 
-At the top of your C4 PlantUML `.puml` file, you need to include the `C4_Context.puml`, `C4_Container.puml` or `C4_Component.puml` file found in the `root` of this repo.
+At the top of your C4 PlantUML `.puml` file, you need to include the `C4_Context.puml`, `C4_App.puml` or `C4_Component.puml` file found in the `root` of this repo.
 
 To be independent of any internet connectivity, you can also download the files found in the `root` and activate the local conversion with additional command line argument `-DRELATIVE_INCLUDE="."` (that the local files are included)
 
@@ -35,24 +45,24 @@ java -jar plantuml.jar -DRELATIVE_INCLUDE="."  ...
 If you want to use the always up-to-date version in this repo, use the following:
 
 ```plantuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 ```
 
-Now let's create a C4 Container diagram:
+Now let's create a C4 App diagram:
 
 \(If you don't want run PlantUML locally you can use e.g. the [PlantUML Web Server](https://www.plantuml.com/plantuml/uml/ZOxDIWGn48JlUOeufn5qSjcJfvNHsugBFsV99iqcsEc4T0VTjpSCE2AYUAeAgVwgjYosIakevytBBK824bPdaHms3pg85BuofjgtwHWbj4DZg2wJzDpaSZAliRh04ioykToZ9Nc-snbux_yUlEdGkOTj9AXJwJLAxQ5ofh4iSetHyeKUTlO0E7HpNoHcigXlW5sDosiuLojaT9_kn-aJk40Py_7q1-Znn09fv4N-swuU0ByFNbVyZlYQqmbR8DyIVW00) too.)
 
-After you have included `C4_Container.puml` you can use the defined macro definitions for the C4 elements: `Person`, `Person_Ext`, `System`, `System_Ext`, `Container`, `Relationship`, `Boundary`, and `System_Boundary`
+After you have included `C4_App.puml` you can use the defined macro definitions for the C4 elements: `Person`, `Person_Ext`, `System`, `System_Ext`, `App`, `Relationship`, `Boundary`, and `System_Boundary`
 
 ```plantuml
 @startuml C4_Elements
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 Person(personAlias, "Label", "Optional Description")
-Container(containerAlias, "Label", "Technology", "Optional Description")
+App(appAlias, "Label", "Technology", "Optional Description")
 System(systemAlias, "Label", "Optional Description")
 
-Rel(personAlias, containerAlias, "Label", "Optional Technology")
+Rel(personAlias, appAlias, "Label", "Optional Technology")
 @enduml
 ```
 
@@ -60,15 +70,15 @@ Rel(personAlias, containerAlias, "Label", "Optional Technology")
 
 In addition to this, it is also possible to define a system or component boundary.
 
-Take a look at the following sample of a C4 Container Diagram:
+Take a look at the following sample of a C4 App Diagram:
 
 ```plantuml
 @startuml Basic Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 Person(admin, "Administrator")
 System_Boundary(c1, "Sample System") {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -83,7 +93,7 @@ Entities can also be decorated with icons/sprites using the $sprite parameter, f
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 !define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
 !define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
@@ -95,9 +105,9 @@ Entities can also be decorated with icons/sprites using the $sprite parameter, f
 LAYOUT_WITH_LEGEND()
 
 Person(user, "Customer", "People that need products", $sprite="users")
-Container(spa, "SPA", "angular", "The main interface that the customer interacts with", $sprite="angular")
-Container(api, "API", "java", "Handles all business logic", $sprite="java")
-ContainerDb(db, "Database", "Microsoft SQL", "Holds product, order and invoice information", $sprite="msql_server")
+App(spa, "SPA", "angular", "The main interface that the customer interacts with", $sprite="angular")
+App(api, "API", "java", "Handles all business logic", $sprite="java")
+AppDb(db, "Database", "Microsoft SQL", "Holds product, order and invoice information", $sprite="msql_server")
 
 Rel(user, spa, "Uses", "https")
 Rel(spa, api, "Uses", "https")
@@ -111,11 +121,11 @@ Similar to icons/sprites is it possible to add links to all elements and relatio
 
 ```plantuml
 @startuml Basic Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 Person(admin, "Administrator", $sprite="person2", $link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md#hide_person_sprite-or-show_person_spritesprite")
 System_Boundary(c1, "Sample System", $link="https://github.com/plantuml-stdlib/C4-PlantUML") {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", $descr="Allows users to compare multiple Twitter timelines", $link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", $descr="Allows users to compare multiple Twitter timelines", $link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md")
 }
 System(twitter, "Twitter", $link="https://github.com/plantuml-stdlib/C4-PlantUML")
 
@@ -134,7 +144,7 @@ Elements and relationships can be decorated with tags and explained via a calcul
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 AddElementTag("v1.0", $borderColor="#d73027")
 AddElementTag("v1.1", $fontColor="#d73027")
@@ -144,11 +154,11 @@ AddRelTag("backup", $textColor="orange", $lineColor="orange", $lineStyle = Dashe
 
 Person(user, "Customer", "People that need products")
 Person(admin, "Administrator", "People that administrates the products via the new v1.1 components", $tags="v1.1")
-Container(spa, "SPA", "angular", "The main interface that the customer interacts with via v1.0", $tags="v1.0")
-Container(spaAdmin, "Admin SPA", "angular", "The administrator interface that the customer interacts with via new v1.1", $tags="v1.1")
-Container(api, "API", "java", "Handles all business logic (incl. new v1.1 extensions)", $tags="v1.0+v1.1")
-ContainerDb(db, "Database", "Microsoft SQL", "Holds product, order and invoice information")
-Container(archive, "Archive", "Audit logging", "Stores 5 years", $tags="backup")
+App(spa, "SPA", "angular", "The main interface that the customer interacts with via v1.0", $tags="v1.0")
+App(spaAdmin, "Admin SPA", "angular", "The administrator interface that the customer interacts with via new v1.1", $tags="v1.1")
+App(api, "API", "java", "Handles all business logic (incl. new v1.1 extensions)", $tags="v1.0+v1.1")
+AppDb(db, "Database", "Microsoft SQL", "Holds product, order and invoice information")
+App(archive, "Archive", "Audit logging", "Stores 5 years", $tags="backup")
 
 Rel(user, spa, "Uses", "https")
 Rel(spa, api, "Uses", "https")
@@ -169,7 +179,7 @@ SHOW_LEGEND()
 > * `?arg`.. argument optional  (e.g. `?descr`)
 
 * System Context & System Landscape diagrams
-  * Import: `!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml`
+  * Import: `!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Context.puml`
   * Macros: 
     * `Person(alias, label, ?descr, ?sprite, ?tags, $link)`
     * `Person_Ext`
@@ -183,19 +193,19 @@ SHOW_LEGEND()
     * `Enterprise_Boundary(alias, label, ?tags, $link)`
     * `System_Boundary` 
 
-* Container diagram
-  * Import: `!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml`
+* App diagram
+  * Import: `!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml`
   * Additional Macros: 
-    * `Container(alias, label, ?techn, ?descr, ?sprite, ?tags, $link)`
-    * `ContainerDb`
-    * `ContainerQueue`
-    * `Container_Ext`
-    * `ContainerDb_Ext`
-    * `ContainerQueue_Ext`
-    * `Container_Boundary(alias, label, ?tags, $link)`
+    * `App(alias, label, ?techn, ?descr, ?sprite, ?tags, $link)`
+    * `AppDb`
+    * `AppQueue`
+    * `App_Ext`
+    * `AppDb_Ext`
+    * `AppQueue_Ext`
+    * `App_Boundary(alias, label, ?tags, $link)`
 
 * Component diagram
-  * Import: `!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml`
+  * Import: `!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Component.puml`
   * Additional Macros: 
     * `Component(alias, label, ?techn, ?descr, ?sprite, ?tags, $link)`
     * `ComponentDb`
@@ -205,7 +215,7 @@ SHOW_LEGEND()
     * `ComponentQueue_Ext`
 
 * Dynamic diagram
-  * Import: `!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml`
+  * Import: `!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Dynamic.puml`
   * Additional Macros: 
     * `RelIndex(index, from, to, label, ?tags, $link)`
     * (lowercase) `increment($offset=1)`: increase current index (procedure which has no direct output)
@@ -217,7 +227,7 @@ SHOW_LEGEND()
     * `SetIndex($new_index)`: returns new set index and calculates next index (function which can be used as argument)
 
 * Deployment diagram
-  * Import: `!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml`
+  * Import: `!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Deployment.puml`
   * Additional Macros: 
     * `Deployment_Node(alias, label, ?type, ?descr, ?sprite, ?tags, $link)`
     * `Node(alias, label, ?type, ?descr, ?sprite, ?tags, $link)`: short name of Deployment_Node()
@@ -242,7 +252,7 @@ In following sample a person uses different systems, and a group of persons whic
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 HIDE_STEREOTYPE()
 
 Person(a, "A")
@@ -284,7 +294,7 @@ In following sample a person uses different systems, and a group of persons whic
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 HIDE_STEREOTYPE()
 
 Person(a, "A")
@@ -323,7 +333,7 @@ In following sample the floating legend should be in the left bottom corner of t
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 !define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
 !define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
@@ -333,9 +343,9 @@ In following sample the floating legend should be in the left bottom corner of t
 !include FONTAWESOME/users.puml
 
 Person(user, "Customer", "People that need products", $sprite="users")
-Container(spa, "SPA", "angular", "The main interface that the customer interacts with", $sprite="angular")
-Container(api, "API", "java", "Handles all business logic", $sprite="java")
-ContainerDb(db, "Database", "Microsoft SQL", "Holds product, order and invoice information", $sprite="msql_server")
+App(spa, "SPA", "angular", "The main interface that the customer interacts with", $sprite="angular")
+App(api, "API", "java", "Handles all business logic", $sprite="java")
+AppDb(db, "Database", "Microsoft SQL", "Holds product, order and invoice information", $sprite="msql_server")
 
 Rel(user, spa, "Uses")
 Rel(spa, api, "Uses")
@@ -380,7 +390,7 @@ Color of the displayed images can be changed with `,color={color}   `.
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 'stdlib users.puml defines sprite "users"
 !include <office/users/users.puml>
@@ -391,12 +401,12 @@ AddRelTag("plantuml", $textColor="$ARROW_COLOR", $lineColor="$ARROW_COLOR", $spr
 Person(user, "user group displayed with a sprite", $sprite="users")
 
 
-Container(container, "Container with scaled and colored OpenIconic", $sprite="&folder,scale=5.0,color=gray")
+App(app, "App with scaled and colored OpenIconic", $sprite="&folder,scale=5.0,color=gray")
 
 System(system, "System with an image", $sprite="img:http://plantuml.com/logo3.png")
 
 Rel(user, system, "Rel with image (via tags)", $tags="plantuml")
-Rel(user, container, "Rel with OpenIconinc", $sprite="&folder")
+Rel(user, app, "Rel with OpenIconinc", $sprite="&folder")
 
 SHOW_LEGEND()
 @enduml
@@ -411,7 +421,7 @@ Relationship specific sprites are typically smaller and therefore following opti
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Context.puml
 
 Person(user, "User")
 Person(user1, "User 1")
@@ -472,8 +482,8 @@ Additional tags/stereotypes can be added to the existing element stereotypes (co
 * `DottedLine()`: This call returns the name of the dotted line and can be used as ?lineStyle argument.
 * `BoldLine()`: This call returns the name of the bold line and can be used as ?lineStyle argument.
 
-Each element can be extended with one or multiple custom tags via the keyword argument `$tags="..."`, like `Container(spaAdmin, "Admin SPA", $tags="v1.1")`.
-Multiple tags can be combined with `+`, like `Container(api, "API", $tags="v1.0+v1.1")`.
+Each element can be extended with one or multiple custom tags via the keyword argument `$tags="..."`, like `App(spaAdmin, "Admin SPA", $tags="v1.1")`.
+Multiple tags can be combined with `+`, like `App(api, "API", $tags="v1.0+v1.1")`.
 
 **Element specific tag definitions**
 
@@ -493,8 +503,8 @@ Following calls introduces new element tags with element specific default colors
 * `AddExternalSystemTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`
 * `AddComponentTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
 * `AddExternalComponentTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
-* `AddContainerTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
-* `AddExternalContainerTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?techn, ?sprite, ?legendText, ?legendSprite)`
+* `AddAppTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
+* `AddExternalAppTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?techn, ?sprite, ?legendText, ?legendSprite)`
 * `AddNodeTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
   (node specific: $type reuses $techn definition of $tags)
 
@@ -515,7 +525,7 @@ Following calls introduces new element tags with element specific default colors
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 UpdateElementStyle(person, $fontColor="green")
 AddElementTag("v1.0", $fontColor="#d73027", $borderColor="#d73027")
@@ -533,14 +543,14 @@ AddRelTag("service1", $textColor="red")
 AddRelTag("service2", $lineColor="red")
 AddRelTag("service1&service2", $textColor="red", $lineColor="red")
 
-Container(spa, "SPA", "angular", "The main interface that the customer interacts with via v1.0", $tags="v1.0")
-Container(spaAdmin, "Admin SPA", "angular", "The administrator interface that the customer interacts with via new v1.1", $tags="v1.1")
-Container(api, "API", "java", "Handles all business logic (incl. new v1.1 extensions)", $tags="v1.0&v1.1+v1.0+v1.1")
-Container(spa2, "SPA2", "angular", "The main interface that the customer interacts with via v1.0", $tags="v1.0+fallback")
-Container(spaAdmin2, "Admin SPA2", "angular", "The administrator interface that the customer interacts with via new v1.1", $tags="fallback+v1.1")
+App(spa, "SPA", "angular", "The main interface that the customer interacts with via v1.0", $tags="v1.0")
+App(spaAdmin, "Admin SPA", "angular", "The administrator interface that the customer interacts with via new v1.1", $tags="v1.1")
+App(api, "API", "java", "Handles all business logic (incl. new v1.1 extensions)", $tags="v1.0&v1.1+v1.0+v1.1")
+App(spa2, "SPA2", "angular", "The main interface that the customer interacts with via v1.0", $tags="v1.0+fallback")
+App(spaAdmin2, "Admin SPA2", "angular", "The administrator interface that the customer interacts with via new v1.1", $tags="fallback+v1.1")
 
-Container(services, "Services", "techn", $tags="microService")
-Container(fileStorage, "File storage", "techn", $tags="storage")
+App(services, "Services", "techn", $tags="microService")
+App(fileStorage, "File storage", "techn", $tags="storage")
 
 Rel(spa, api, "Uses", "https")
 Rel(spaAdmin, api, "Uses", "https")
@@ -561,7 +571,7 @@ SHOW_LEGEND(false)
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 !define osaPuml https://raw.githubusercontent.com/Crashedmind/PlantUML-opensecurityarchitecture2-icons/master
 !include osaPuml/Common.puml
@@ -577,10 +587,10 @@ AddExternalPersonTag("anonymous_ext", $sprite="osa_user_black_hat", $legendText=
 AddPersonTag("customer", $sprite="osa_user_large_group", $legendText="aggregated user")
 AddPersonTag("admin", $sprite="osa_user_audit,color=red", $legendSprite="osa_user_audit,scale=0.25,color=red", $legendText="administration user")
 
-AddContainerTag("webApp", $sprite="application_server", $legendText="web app container")
-AddContainerTag("db", $sprite="database_server", $legendText="database container")
-AddContainerTag("files", $sprite="file_server", $legendText="file server container")
-AddContainerTag("conApp", $sprite="service_application", $legendText="console app container")
+AddAppTag("webApp", $sprite="application_server", $legendText="web app app")
+AddAppTag("db", $sprite="database_server", $legendText="database app")
+AddAppTag("files", $sprite="file_server", $legendText="file server app")
+AddAppTag("conApp", $sprite="service_application", $legendText="console app app")
 
 AddRelTag("firewall", $textColor="$ARROW_COLOR", $lineColor="$ARROW_COLOR", $sprite="firewall,scale=0.3,color=red", $legendText="firewall")
 
@@ -589,11 +599,11 @@ Person(aggregated_user, "Sam, Ivone", $tags="customer")
 Person(administration_user, "Bernd", $tags="admin")
 
 System_Boundary(c1, "techtribes.js"){
-    Container(web_app, "Web Application", "Java, Spring MVC, Tomcat 7.x", $tags="webApp")
-    ContainerDb(rel_db, "Relational Database", "MySQL 5.5.x", $tags="db")
-    Container(filesystem, "File System", "FAT32", $tags="files")
-    ContainerDb(nosql, "NoSQL Data Store", "MongoDB 2.2.x", $tags="db")
-    Container(updater, "Updater", "Java 7 Console App", $tags="conApp")
+    App(web_app, "Web Application", "Java, Spring MVC, Tomcat 7.x", $tags="webApp")
+    AppDb(rel_db, "Relational Database", "MySQL 5.5.x", $tags="db")
+    App(filesystem, "File System", "FAT32", $tags="files")
+    AppDb(nosql, "NoSQL Data Store", "MongoDB 2.2.x", $tags="db")
+    App(updater, "Updater", "Java 7 Console App", $tags="conApp")
 }
 
 Rel(anonymous_user, web_app, "Uses", "HTTPS", $tags="firewall")
@@ -622,7 +632,7 @@ If the custom (color) schema is defined via `UpdateElementStyle()` then the lege
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Context.puml
 
 !$COLOR_A_5 = "#7f3b08"
 !$COLOR_A_4 = "#b35806"
@@ -676,7 +686,7 @@ Following sample uses all 3 different property definitions (and the aligned depl
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_Deployment.puml
 
 ' default header Property, Value
 AddProperty("Name", "Flash")
@@ -692,7 +702,7 @@ Deployment_Node_L(nodeAlias, "Label", "Optional Type", "Optional Description (wi
   WithoutPropertyHeader()
   AddProperty("PropC1", "ValueC1")
   AddProperty("PropC2", "ValueC2")
-  Container(containerAlias, "Label", "Technology", "Optional Description (without property header)")
+  App(appAlias, "Label", "Technology", "Optional Description (without property header)")
 }
 
 System(systemAlias, "Label", "Optional Description (without properties)")
@@ -701,7 +711,7 @@ System(systemAlias, "Label", "Optional Description (without properties)")
 WithoutPropertyHeader()
 AddProperty("PropC1", "ValueC1")
 AddProperty("PropC2", "ValueC2")
-Rel(personAlias, containerAlias, "Label", "Optional Technology", "Optional Description")
+Rel(personAlias, appAlias, "Label", "Optional Technology", "Optional Description")
 @enduml
 ```
 
@@ -716,7 +726,7 @@ C4-PlantUML offers version information like PlantUML with its `%version()` call.
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 ' existing plantuml version as text
 %version()
@@ -779,13 +789,13 @@ The core diagram samples from [c4model.com](https://c4model.com/#coreDiagrams) a
 
 **techtribes.js**
 
-Source: [C4_Container Diagram Sample - techtribesjs.puml](samples/C4_Container%20Diagram%20Sample%20-%20techtribesjs.puml)
+Source: [C4_App Diagram Sample - techtribesjs.puml](samples/C4_App%20Diagram%20Sample%20-%20techtribesjs.puml)
 
 ![techtribesjs](https://www.plantuml.com/plantuml/png/ZLHDR-Cs4BthLqnzMGVGshj9jm5wMYTEazqw7uta1Zq9b3YMcLAaIb9nZAB_lKDAaQsuWEk39G_V3D-RUUElrZ7Zcah2o66nTaRaQ9_jAFf1g48s767jN6r_dauDsqnAuTPDtbWqXLOEbPiKkfhMaYbVugDrN8fyUldZnmSVMjukfXMp3Ws5ialAO4AXcTI4ZJv0eoYveYBWrWWhBQNU25M2910mnM5mB8obDmrqEKXTC2ctLADdUNX1j9ZzSRzCi_J-8PlVFzsDJw8FNMYMPCclL-db3SMwqDEtz2PRN5rVtSqf64KFQAnMsTMh6pEbrRRIZSsyy1X6ixS0B2amEkd0OrQM1alcaFV8Fl8UoYkXX7M6EQ5L3nz4trAYP6iTLjc5RXHdPZikFiVxqvhGk4x-Ze0-uQllmtY3USRgcj1FcCEihgKeGkaHXRwp5nP3KXlVyzlVBsD8TKN7S3vvzUSpFmyBdfhrZNyHk84QTIqnXlRc63eRn80lzA30iyxf6rqnWPNH5Ssk6nTumZ5mGHvYCiptMmeM2wUzo27pUJusA3EU4uz7b84p9SsPOpcpwEdTRfFV5l1bygLbcr0Pj0VymXCgh79IiHOrHPZyqxxdcpDUUlYrS3TD3WPhtQaue3PU2OasJ8Ik_OL-G3kVaVyvIyzEz-XOPAPOWr0SNz7-bqobxL-I4kuqoGa28UG6YLgLUdu1fvFJWSZGsCSacSuSlQmGkOLnBdK9HDlPaz1Sjq5qzf1-KtFcWjkMxTkR5-3SewoMw9qowW4MQgE3wBWhEknJkAtp0MW536onHjv8v4334fx3Fxs9_KAvZN0jXRHz8yJUSVidGwVjBSD3BzFIsGKzWxg8_76meZlZqmvPh-KcJHyImXDwkAV7uSDTFPeISlhZFHiptetEDsnZX6-jqpwLHZ_zFh-W5QorSN1szkadAZIeitFTeDPxMB3J4B5df8qmwAVfTA5bTzdf-QVFvntjRDdRunXnGh4Zx0Vb1loVUl47k23WIBl-hvnTrPtZhj7rXWQXLjfKOQoxdUdRrazqK6hdJe8EA-IwSL0tkHG559fZkn_2QIFmIDNErg5elqoD5QhqYnx8zSi-BEMrBjWsU-p_CNUjfgElg7XJoNy1 "techtribesjs")
 
 **Message Bus and Microservices**
 
-Source: [C4_Container Diagram Sample - message bus.puml](samples/C4_Container%20Diagram%20Sample%20-%20message%20bus.puml)
+Source: [C4_App Diagram Sample - message bus.puml](samples/C4_App%20Diagram%20Sample%20-%20message%20bus.puml)
 
 ![messagebus](https://www.plantuml.com/plantuml/png/ZLNVRzis47xtNt7p1am6d1WTzZGWGFt3M5iuYMlPwADn4iyIKOeaICgfD-n_7odPAjqegFEGaCUxx_lkFb9vRnqQLrTYy0kNkQWPGUcSjdzD9WPVxWlkoZghBPbSIKVItUUgccY1CjJSMSS4poRpF-_M8RHxN4qgj8wC3-tdlWAv97El0_xlK4jVN7aGS2N1GGcXNhWiGFWaGCdWwfWRwrSAF3a8bQCG9u_HgNnDC9WojXGK4BPO9CEAvqQbP8uyf-4OVhCbQdfOyg9qAMV4qh1FHluaA-PAAFCmd2iZ3ruLcPcecwA3vpWVlfJSDJ511KcsfM_keIK1sx90GW4TR80V3KS_Ah9E6ImYCHjLIvywKzzwn8X6wTVJMr8y_Y3zyFnblrvkqkUd_VDkk_huj4nyU4t6AfdajMUio8nXtgs6KxY46u2JTLJjPq48cbEIl_CfbspuA0_ALEYuaiCH_3i0_zDDFK6ju-IfreBdRRAFVy8ZsjnmxSOmbKKjq8JmDBXkEmqsM5oXn8A2xTo0Dkh0HUZkckrIiJyFEwRkN6vfnv1g4sxMJ2aNWjkIG2ik7QW3O9wJjU0xwrG0ZnhretPOM7Y0-0gz5bHv52zxdzNMKposEvZLDZ1kCCkuU_pSi1kKLYlZ6awVpcKGG4UIphw2DHHIlVgeqSqb5dUwgRDJ-3itX8uioD21u9OOC7JOa7LWe6kZbILxStjOC-uY3TEmZ_ddlqxkdvRRi5mRTUICB2XJeEIs6UJTYmz10nC4733dmYzlbx38lflEijZl1JhCq3OodWtcWk3T7tdOfKuPiZyrjds9VOpTn09bFFcOy_6KVbv5T7WP_Z_4u4Z6UhhcgWdH-VtT56HGghp7crw5_RRuqyYKi0jobaUItRPJ5yq0C5ErEryzS2KwAF58_fVM98drA_XlCDYGs2-Y3qhxzdUjwE67xNQT-iHpMdFOyrvtcg5xmnq8Ooe26DgJpCVmoN_J9bV0k-GrPgiZ9SbirvKAA5yeIrN-bPolVgiuUi4TIAUjRiH6e0rE3qfqHxkPjsRpzaEucCtFBIHNZ7ql_JOHCKpxmcw7k4ZfOUz2lQsqr3-mnTUngsYvsfh12a_xJH_R5TBbVzbg-VVoQP6C1kzz5tKb_WS0 "messagebus")
 
@@ -801,7 +811,7 @@ It is the most used text-based diagram drawing tool with [extensive support into
 
 The [C4 model](https://c4model.com/) for software architecture is an "abstraction-first" approach to diagramming, based upon abstractions that reflect how software architects and developers think about and build software.
 The small set of abstractions and diagram types makes the C4 model easy to learn and use.
-C4 stands for context, containers, components, and code — a set of hierarchical diagrams that you can use to describe your software architecture at different zoom levels, each useful for different audiences.
+C4 stands for context, apps, components, and code — a set of hierarchical diagrams that you can use to describe your software architecture at different zoom levels, each useful for different audiences.
 
 The C4 model was created as a way to help software development teams describe and communicate software architecture, both during up-front design sessions and when retrospectively documenting an existing codebase.
 

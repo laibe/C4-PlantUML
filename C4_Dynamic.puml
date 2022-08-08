@@ -2,14 +2,14 @@
 !if %variable_exists("RELATIVE_INCLUDE")
   !include %get_variable_value("RELATIVE_INCLUDE")/C4_Component.puml
 !else
-  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+  !include ./C4_Component.puml
 !endif
 
-' Scope: Interactions in an enterprise, software system or container.
+' Scope: Interactions in an enterprise, software system or app.
 ' Primary and supporting elements: Depends on the diagram scope -
 '     enterprise - people and software systems Related to the enterprise in scope
-'     software system - see system context or container diagrams,
-'     container - see component diagram.
+'     software system - see system context or app diagrams,
+'     app - see component diagram.
 ' Intended audience: Technical and non-technical people, inside and outside of the software development team.
 
 ' Dynamic diagram introduces (automatically) numbered interactions:

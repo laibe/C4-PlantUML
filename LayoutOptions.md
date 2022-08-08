@@ -12,14 +12,14 @@ With the two macros `LAYOUT_TOP_DOWN()` and `LAYOUT_LEFT_RIGHT()` it is possible
 
 ```plantuml
 @startuml LAYOUT_TOP_DOWN Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 /' Not needed because this is the default '/
 LAYOUT_TOP_DOWN()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -34,13 +34,13 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ```plantuml
 @startuml LAYOUT_LEFT_RIGHT Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 LAYOUT_LEFT_RIGHT()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -55,13 +55,13 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ```plantuml
 @startuml LAYOUT_LANDSCAPE Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 LAYOUT_LANDSCAPE()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -96,13 +96,13 @@ This can be enabled with `LAYOUT_WITH_LEGEND()`.
 
 ```plantuml
 @startuml LAYOUT_WITH_LEGEND Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 LAYOUT_WITH_LEGEND()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -123,11 +123,11 @@ The calculated legend has following differences:
 
 ```plantuml
 @startuml SHOW_LEGEND Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -146,13 +146,13 @@ SHOW_LEGEND()
 
 ```plantuml
 @startuml Layout With Whitespace Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 Person(a, "Person A")
-Container(b, "Container B", "techn")
+App(b, "App B", "techn")
 System(c, "System C")
-Container(d, "Container D", "techn")
-Container_Ext(e, "Ext. Container E", "techn")
+App(d, "App D", "techn")
+App_Ext(e, "Ext. App E", "techn")
 
 Rel_R(a, b, "calls")
 Rel_D(b, c, "uses")
@@ -172,13 +172,13 @@ Therefore a floating legend can be added via SHOW_FLOATING_LEGEND(), positioned 
 
 ```plantuml
 @startuml Compact Legend Layout Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 Person(a, "Person A")
-Container(b, "Container B", "techn")
+App(b, "App B", "techn")
 System(c, "System C")
-Container(d, "Container D", "techn")
-Container_Ext(e, "Ext. Container E", "techn")
+App(d, "App D", "techn")
+App_Ext(e, "Ext. App E", "techn")
 
 Rel_R(a, b, "calls")
 Rel_D(b, c, "uses")
@@ -208,13 +208,13 @@ With `LAYOUT_AS_SKETCH()` you can make a difference.
 
 ```plantuml
 @startuml LAYOUT_AS_SKETCH Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 LAYOUT_AS_SKETCH()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -236,7 +236,7 @@ PNG does not support fallback fonts based on a PlantUML [bug](https://forum.plan
 
 ```plantuml
 @startuml LAYOUT_AS_SKETCH Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 SET_SKETCH_STYLE($bgColor="lightblue", $fontColor="darkblue", $warningColor="darkred", $footerWarning="Sketch", $footerText="Created for discussion")
 
@@ -250,7 +250,7 @@ LAYOUT_AS_SKETCH()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -282,13 +282,13 @@ This can be enabled with `HIDE_STEREOTYPE()`.
 
 ```plantuml
 @startuml HIDE_STEREOTYPE Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 HIDE_STEREOTYPE()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -314,7 +314,7 @@ With the macros `HIDE_PERSON_SPRITE()`, `SHOW_PERSON_SPRITE()` and `SHOW_PERSON_
 
 ```plantuml
 @startuml predefined sprites Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 Person(userA, "User A", "with predefined sprite person", "person")
 Person(userB, "User B", "with predefined sprite person2", "person2")
@@ -328,13 +328,13 @@ Person(userB, "User B", "with predefined sprite person2", "person2")
 
 ```plantuml
 @startuml HIDE_PERSON_SPRITE Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 HIDE_PERSON_SPRITE()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -349,14 +349,14 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ```plantuml
 @startuml SHOW_PERSON_SPRITE Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 /' Not needed because this is the default with sprite "person" '/
 SHOW_PERSON_SPRITE()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -371,7 +371,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ```plantuml
 @startuml SHOW_PERSON_SPRITE(sprite) Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 !define osaPuml https://raw.githubusercontent.com/Crashedmind/PlantUML-opensecurityarchitecture2-icons/master
 !include osaPuml/Common.puml
 !include osaPuml/User/all.puml
@@ -380,7 +380,7 @@ SHOW_PERSON_SPRITE("osa_user_green_architect")
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -395,13 +395,13 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ```plantuml
 @startuml SHOW_PERSON_PORTRAIT() Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 SHOW_PERSON_PORTRAIT()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
@@ -421,13 +421,13 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ```plantuml
 @startuml SHOW_PERSON_OUTLINE() Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 
 SHOW_PERSON_OUTLINE()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 

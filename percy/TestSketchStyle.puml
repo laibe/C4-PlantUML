@@ -1,8 +1,8 @@
 @startuml LAYOUT_AS_SKETCH Sample
 !if %variable_exists("RELATIVE_INCLUDE")
-  !include ./../C4_Container.puml
+  !include ./../C4_App.puml
 !else
-  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  !include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 !endif
 
 SET_SKETCH_STYLE($bgColor="lightblue", $fontColor="darkblue", $warningColor="darkred", $footerWarning="Sketch", $footerText="Created for discussion")
@@ -17,7 +17,7 @@ LAYOUT_AS_SKETCH()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {
-    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+    App(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
 System(twitter, "Twitter")
 
