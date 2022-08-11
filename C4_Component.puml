@@ -2,7 +2,7 @@
 !if %variable_exists("RELATIVE_INCLUDE")
   !include %get_variable_value("RELATIVE_INCLUDE")/C4_App.puml
 !else
-  !include ./C4_App.puml
+  !include https://raw.githubusercontent.com/laibe/C4-PlantUML/master/C4_App.puml
 !endif
 
 ' Scope: A single app.
